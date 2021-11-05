@@ -28,7 +28,7 @@
         };
     });
 
-    ngavatar.directive('ngAvatar', [function() {
+    ngavatar.directive('ngAvatar', ['ngAvatar', function(ngAvatarOptions) {
 
         return {
             restrict: 'AE',
@@ -85,7 +85,7 @@
                     _bind = false,
                     _img_width = "100%",
                     _upperCase = false,
-                    _altText = "avatar";
+                    _altText = ngAvatarOptions.altText;
 
                 function checkValues(){
 

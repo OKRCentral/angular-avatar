@@ -13,6 +13,21 @@
 
     var ngavatar = angular.module('ngAvatar', []);
 
+    ngavatar.provider('ngAvatar', function () {
+        var opts = {
+            altText: 'avatar',
+        };
+
+        return {
+            setOptions: function (newOpts) {
+                angular.extend(opts, newOpts);
+            },
+            $get: function () {
+                return opts;
+            }
+        };
+    });
+
     ngavatar.directive('ngAvatar', [function() {
 
         return {

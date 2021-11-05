@@ -13,7 +13,22 @@
 
     var ngavatar = angular.module('ngAvatar', []);
 
-    ngavatar.directive('ngAvatar', [function() {
+    ngavatar.provider('ngAvatar', function () {
+        var opts = {
+            altText: 'avatar',
+        };
+
+        return {
+            setOptions: function (newOpts) {
+                angular.extend(opts, newOpts);
+            },
+            $get: function () {
+                return opts;
+            }
+        };
+    });
+
+    ngavatar.directive('ngAvatar', ['ngAvatar', function(ngAvatarOptions) {
 
         return {
             restrict: 'AE',
@@ -70,7 +85,7 @@
                     _bind = false,
                     _img_width = "100%",
                     _upperCase = false,
-                    _altText = "avatar";
+                    _altText = ngAvatarOptions.altText;
 
                 function checkValues(){
 

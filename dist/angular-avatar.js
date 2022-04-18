@@ -265,8 +265,8 @@
                     var imgData = generateAvatar( _str, _picture_resolution, _picture_resolution, _bgcolor, _textcolor, null);
 
                     var html = '';
-                    if (_wrapper) html += '<div class="avatar-wrapper '+ _extra_classes +'" style="'+ _wrapper_styling +' width:' + _long + 'px; height:' + _long + 'px; '+ _extra_styles +'">';
-                    html += '<img src="' + imgData + '" class="avatar-picture '+ _extra_img_classes +'" style="'+ _img_styling +'" width="'+ _img_width +'" height="" alt="' + _altText + '" />';
+                    if (_wrapper) html += '<div class="avatar-wrapper '+ _extra_classes +" ng-style= {'border-radius':'0', 'display':'block', 'overflow':'hidden','width':'45px','height':'45px',}";
+                    html += '<img src="' + imgData + '" class="avatar-picture '+ _extra_img_classes +" ng-style= {'vertical-align':'top','width':'100%','height': '',}"+ "alt=" + _altText + '" />';
                     if (_wrapper) html += '</div>';
 
                     var replacementElement = angular.element(html);

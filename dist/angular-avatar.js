@@ -266,7 +266,7 @@
 
                     var html = '';
                     if (_wrapper) html+=`<div class="avatar-wrapper ${_extra_classes}" ng-style= {'border-radius':'0', 'display':'block', 'overflow':'hidden','width':'45px','height':'45px',}">`;
-                    html += '<img src="' + imgData + '" class="avatar-picture '+ _extra_img_classes +`" style="{'vertical-align':'top'}"`+' width="'+ _img_width +'" height="" alt="' + _altText + '" />';
+                    html += '<img src="' + imgData + '" class="avatar-picture '+ _extra_img_classes +`" ng-style="{'vertical-align':'top'}"`+' width="'+ _img_width +'" height="" alt="' + _altText + '" />';
                     if (_wrapper) html += '</div>';
 
                     var replacementElement = angular.element(html);
